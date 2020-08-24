@@ -4,7 +4,5 @@ function angryProfessor(k, a) {
     0
   );
 
-  return onTimeStudents >= k ? "NO" : "YES";
+  return onTimeStudents >= k ? 'NO' : 'YES';
 }
-
-console.log(angryProfessor(3, [-1, -1, 0, 0, 1, 1]));
