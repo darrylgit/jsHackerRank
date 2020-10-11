@@ -4,10 +4,7 @@ function climbingLeaderboard(scores, alice) {
   // Get distinct scores
   let scoresSet = [...new Set(scores)];
 
-  while (alice.length) {
-    // Get first element of in alice array
-    let aliceScore = alice.shift();
-
+  alice.forEach(aliceScore => {
     let i;
 
     // Start searching from most recent rank
@@ -27,7 +24,7 @@ function climbingLeaderboard(scores, alice) {
 
     // Add new rank
     ranks.push(i + 2);
-  }
+  });
 
   return ranks;
 }
