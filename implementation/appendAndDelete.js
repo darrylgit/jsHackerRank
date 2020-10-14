@@ -4,7 +4,6 @@ function appendAndDelete(s, t, k) {
     return 'Yes';
   }
 
-  let operations = 0;
   let firstDifferentIndex = 0;
 
   // Find first index that differs between s and t
@@ -16,8 +15,8 @@ function appendAndDelete(s, t, k) {
     firstDifferentIndex++;
   }
 
-  // Increment operations count by number of indices to remove from s, and also by the number of indices we'd add from t
-  operations +=
+  // Assign operations count to number of indices to remove from s, and also by the number of indices we'd add from t
+  const operations =
     s.length - firstDifferentIndex + (t.length - firstDifferentIndex);
   // We could simplify this to s.length + t.length - 2 * firstDifferentIndex, but for the sake of legibility...
 
