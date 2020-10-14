@@ -24,9 +24,6 @@ function appendAndDelete(s, t, k) {
   // If k is too small, return "No"
   if (operations > k) {
     return 'No';
-    // If k is just right, return "Yes"
-  } else if (operations === k) {
-    return 'Yes';
   }
 
   // If we have leftover operations, we can only ever arrive at t in an even number of additional operations. Therefore:
