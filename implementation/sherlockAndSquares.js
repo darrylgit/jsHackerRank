@@ -1,6 +1,6 @@
 function squares(a, b) {
   // Rather than iterate through a bunch of numbers that might not be square integers,
-  // we're going to start with the next square integer after a and take its root
+  // we're going to start the root of what would be the next square integer after a
   const startingSquareRoot = Math.ceil(Math.sqrt(a));
 
   let numberOfSquareIntegers = 0;
