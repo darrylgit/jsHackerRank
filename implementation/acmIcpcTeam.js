@@ -1,5 +1,33 @@
 function acmTeam(topic) {
-  // I really wanted to use a bitwise operator here, even though it's not that easy in Javascript
+  let maxKnownTopics = 0;
+  let numberOfMaxKnownTopicTeams = 1;
+
+  for (let i = 0; i < topic.length - 1; i++) {
+    for (let j = i + 1; j < topic.length; j++) {
+      let knownTopicCount = 0;
+
+      topic[i].split('').forEach((val, idx) => {
+        if (val === '1' || topic[j][idx] === '1') {
+          knownTopicCount++;
+        }
+      });
+
+      if (knownTopicCount > maxKnownTopics) {
+        maxKnownTopics = knownTopicCount;
+        numberOfMaxKnownTopicTeams = 1;
+      } else if (knownTopicCount === maxKnownTopics) {
+        numberOfMaxKnownTopicTeams++;
+      }
+    }
+  }
+
+  return [maxKnownTopics, numberOfMaxKnownTopicTeams];
+}
+
+console.log(acmTeam(['10101', '11100', '11010', '00101']));
+
+// I really wanted to use a bitwise operator  even though it breaks in HackerRank's longer test cases
+function acmTeamBitwise(topic) {
   function bitwiseOrTopicsCount(bin1, bin2) {
     const base10BitwiseResult = parseInt(bin1, 2) | parseInt(bin2, 2);
 
